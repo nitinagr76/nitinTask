@@ -1,0 +1,23 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Image</th>
+        <th scope="col">FirstName</th>
+        <th scope="col">LastName</th>
+        <th scope="col">Email</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor ='let user of userList?.data'>
+        <th><img [src]="user.avatar"></th>
+        <td>{{user.first_name}}</td>
+        <td>{{user.last_name}}</td>
+        <td>@{{user.email}}</td>
+        <td> <button type="button" (click) ='deleteUser(user.email)'>Delete</button>
+          <button type="button" routerLink ='user/{{user.id}}'>View</button></td>
+
+      </tr>
+   
+    </tbody>
+  </table>
